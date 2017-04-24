@@ -36,14 +36,14 @@ echo "[BUILD] - Generate new filesystem.squashfs with the updated ubuntu-archive
 mkdir temp
 cd temp
 sudo unsquashfs $NEW_DIR/install/filesystem.squashfs
-sudo chown -R $USER:$USER squashfs-root
 cd squashfs-root
-cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg usr/share/keyrings/ubuntu-archive-keyring.gpg
-cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg etc/apt/trusted.gpg 
-cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg var/lib/apt/keyrings/ubuntu-archive-keyring.gpg 
+sudo cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg usr/share/keyrings/ubuntu-archive-keyring.gpg
+sudo cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg etc/apt/trusted.gpg
+sudo cp $HOME_DIR/build-ubuntu-keyring/ubuntu-keyring-2012.05.19/keyrings/ubuntu-archive-keyring.gpg var/lib/apt/keyrings/ubuntu-archive-keyring.gpg
 rm $NEW_DIR/install/filesystem.squashfs $NEW_DIR/install/filesystem.size
-du -sx --block-size=1 ./ | cut -f1 > $NEW_DIR/install/filesystem.size
-mksquashfs ./ $NEW_DIR/install/filesystem.squashfs
+sudo du -sx --block-size=1 ./ | cut -f1 > $NEW_DIR/install/filesystem.size
+sudo mksquashfs ./ $NEW_DIR/install/filesystem.squashfs
+sudo chown $USER:$USER $NEW_DIR/install/filesystem.squashfs
 
 cd $HOME_DIR
 
