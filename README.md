@@ -23,4 +23,4 @@ cd indices
 ./build-iso.sh new-iso
 ```
 
-[1](https://jack6liu.wordpress.com/2014/12/28/how-to-customize-ubuntu-14-04-installation-c/)HOW TO CUSTOMIZE UBUNTU 14.04 INSTALLATION CD
+[1][HOW TO CUSTOMIZE UBUNTU 14.04 INSTALLATION CD](https://jack6liu.wordpress.com/2014/12/28/how-to-customize-ubuntu-14-04-installation-c/)
