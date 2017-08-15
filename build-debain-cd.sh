@@ -54,6 +54,7 @@ echo "[BUILD] - Copying all debs to \"${EXTRAS_POOL}\""
 mkdir -p $EXTRAS_DIST
 mkdir -p $EXTRAS_POOL
 
+cp $HOME_DIR/oem-config-eula_1.0_amd64.deb $EXTRAS_POOL
 cd $EXTRAS_POOL
 apt-get download vim htop tree
 
