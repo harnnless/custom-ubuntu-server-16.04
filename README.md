@@ -12,8 +12,11 @@ gpg --gen-key
 cd indices
 ./build-indices.sh
 ```
-
-4.Build debian-cd style folder
+4.1.Modify ```$SRC_ISO``` to locate the path of your original image
+```
+vim ./build-debian-cd.sh
+```
+4.2.Build debian-cd style folder
 ```
 ./build-debian-cd.sh
 ```
