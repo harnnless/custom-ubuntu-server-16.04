@@ -1,29 +1,25 @@
 # custom-ubuntu-server-16.04 HOWTO
 
-1.Generate GPG keyring
+0. Dependencies
 ```
-gpg --gen-key
+apt install syslinux-utils rng-tools fakeroot squashfs-tools dpkg-dev isolinux xorriso
 ```
 
-2.Regenerate ubuntu-keyring with ubuntu archive / cdimage signing key[1]
+1. Customize Configuration
+Create a file: ./private/mygpgkey.config, set gpg key options, Specify unattended answer file.
+```
+GPGKEYNAME="Custom Installation Key"
+GPGKEYCOMMENT="Package Signing"
+GPGKEYEMAIL="custom@example.com"
+GPGKEYPHRASE="ForDemo"
 
-3.Build all indices
+SEEDFILE=$BASE_DIR/private/auto.seed
 ```
-cd indices
-./build-indices.sh
-```
-4.1.Modify ```$SRC_ISO``` to locate the path of your original image
+
+2. Copy or download deb to ./extras folder
+
+3. Modify ```$ORIG_ISO``` to locate the path of your original image, then build
 ```
 vim ./build-debian-cd.sh
-```
-4.2.Build debian-cd style folder
-```
 ./build-debian-cd.sh
 ```
-
-5.Build an ISO
-```
-./build-iso.sh new-iso
-```
-
-[1][HOW TO CUSTOMIZE UBUNTU 14.04 INSTALLATION CD](https://jack6liu.wordpress.com/2014/12/28/how-to-customize-ubuntu-14-04-installation-c/)

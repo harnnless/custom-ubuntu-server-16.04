@@ -1,0 +1,8 @@
+keyring/*
+temp/*
+build/*
+private/*
+target/*
+indices
+extras
+*.iso

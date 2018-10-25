@@ -1,5 +1,5 @@
 Dir {
-  ArchiveDir "/workzone/custom-ubuntu-server/new-iso/";
+  ArchiveDir "{BUILD_DIR}/";
 };
 
 TreeDefault {

@@ -1,5 +1,5 @@
 Dir {
-  ArchiveDir "/workzone/custom-ubuntu-server/new-iso/";
+  ArchiveDir "{BUILD_DIR}/";
 };
 
 TreeDefault {
@@ -8,12 +8,12 @@ TreeDefault {
 
 BinDirectory "pool/main" {
   Packages "dists/xenial/main/debian-installer/binary-amd64/Packages";
-  BinOverride "/workzone/custom-ubuntu-server/indices/override.xenial.main.debian-installer";
+  BinOverride "{BASE_DIR}/indices/override.xenial.main.debian-installer";
 };
 
 BinDirectory "pool/restricted" {
   Packages "dists/xenial/restricted/debian-installer/binary-amd64/Packages";
-  BinOverride "/workzone/custom-ubuntu-server/indices/override.xenial.restricted.debian-installer";
+  BinOverride "{BASE_DIR}/indices/override.xenial.restricted.debian-installer";
 };
 
 Default {

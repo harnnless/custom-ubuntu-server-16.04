@@ -1,5 +1,5 @@
 Dir {
-  ArchiveDir "/workzone/custom-ubuntu-server/new-iso/";
+  ArchiveDir "{BUILD_DIR}/";
 };
 
 TreeDefault {
@@ -8,13 +8,13 @@ TreeDefault {
 
 BinDirectory "pool/main" {
   Packages "dists/xenial/main/binary-amd64/Packages";
-  BinOverride "/workzone/custom-ubuntu-server/indices/override.xenial.main";
-  ExtraOverride "/workzone/custom-ubuntu-server/indices/override.xenial.extra.main";
+  BinOverride "{BASE_DIR}/indices/override.xenial.main";
+  ExtraOverride "{BASE_DIR}/indices/override.xenial.extra.main";
 };
 
 BinDirectory "pool/restricted" {
  Packages "dists/xenial/restricted/binary-amd64/Packages";
- BinOverride "/workzone/custom-ubuntu-server/indices/override.xenial.restricted";
+ BinOverride "{BASE_DIR}/indices/override.xenial.restricted";
 };
 
 Default {
